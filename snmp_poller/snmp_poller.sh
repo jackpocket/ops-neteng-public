@@ -43,4 +43,8 @@ sudo cp ./snmp_poller/conf/snmp/conf.yaml /etc/datadog-agent/conf.d/snmp.d/
 sudo systemctl enable datadog-agent
 sudo systemctl restart datadog-agent
 sudo rm speedtest*
+sudo rm ookla*
 
+
+#Press YES
+sudo -u dd-agent speedtest
