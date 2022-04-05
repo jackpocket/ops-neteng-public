@@ -1,0 +1,37 @@
+init_config:
+  loader: core
+  user_device_id_as_hostname: true
+instances:
+  - ip_address: '<FIREWALLIP>'
+    min_collection_interval: 5
+    profile: 'sophos-xg'
+    snmp_version: 3
+    user: 'sophos'
+    authProtocol: 'SHA256'
+    authKey: '<authKey>'
+    privProtocol: 'AES'
+    privKey: '<privKey>'
+    tags:
+      - 'site: <SITE>'
+      - 'vendor: sophos'
+      - 'function: firewall'
+
+  - network_address: '<PRINTER_VLAN>'
+    min_collection_interval: 5
+    profile: 'brother'
+    snmp_version: 2
+    community_string: '<COMMUNITY_STRING>'
+    tags:
+      - 'site: <SITE>'
+      - 'vendor: brother'
+      - 'function: printer'
+
+  - network_address: '<NETWORK_MANAGEMENT_VLAN>'
+    min_collection_interval: 5
+    profile: 'zyxel'
+    snmp_version: 2
+    community_string: '<COMMUNITY_STRING>'
+    tags:
+      - 'site: <SITE>'
+      - 'vendor: zyxel'
+      - 'function: switch'
