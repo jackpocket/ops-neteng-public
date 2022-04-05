@@ -1,4 +1,4 @@
-h4. Manual Steps Prior to running this installer
+Manual Steps Prior to running this installer
 
 sudo git clone https://github.com/jackpocket/ops-neteng.git
 export DD_AGENT_MAJOR_VERSION=7 
