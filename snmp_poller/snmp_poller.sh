@@ -1,12 +1,12 @@
 #!/bin/sh
 
 #MANUAL STEPS#
-#sudo dpkg --configure -a
-#sudo apt-get install git -y
-#sudo git clone https://github.com/jackpocket/ops-neteng.git
-#EXPORT!!!!! ENV variables
 
-#https://github.com/jackpocket/ops-neteng.git
+#sudo git clone https://github.com/jackpocket/ops-neteng.git
+export DD_API_KEY=8888
+
+export DD_SITE="datadoghq.com"
+export DD_AGENT_MAJOR_VERSION=7
 
 #Remove anything old or remaining
 sudo rm ookla*
