@@ -1,0 +1,154 @@
+extends:
+  - _base.yaml
+    #- generic-router.yaml
+    #- _generic-router-if.yaml
+    #- generic-sophos.yaml
+  - _generic-if.yaml
+  - _generic-host-resources.yaml
+  - _generic-tcp.yaml
+
+sysobjectid:
+  - 1.3.6.1.4.1.2604.5 # sophos-xg specific
+
+#This does not seem to work at all
+
+#metadata:
+#  device:
+#    fields:
+#      name:
+#        symbol:
+#          OID: 1.3.6.1.4.1.2604.5.1.1.1
+#          name: sfosDeviceName
+#      description:
+#       symbol:
+#         OID: 1.3.6.1.2.1.1.1.0
+#         name: sysDescr
+#      sys_object_id:
+#        symbol:
+#        OID: 1.3.6.1.2.1.1.2.0
+#        name: sysObjectID
+#      location:
+#        symbol:
+#        OID: 1.3.6.1.2.1.1.6.0
+#        name: sysLocation
+
+metrics:
+#TODO Figure out why this does not work and adding a profile above does
+#  - MIB: HOST-RESOURCES-MIB
+#    table:
+#      OID: 1.3.6.1.2.1.25.2.3
+#      name: hrStorageTable
+#    symbol:
+#      OID: 1.3.6.1.2.1.25.2.3.1.6
+#      name: hrStorageUsed
+#    metric_tags:
+#      - tag: storage_used
+#        column:
+#          OID: 1.3.6.1.2.1.25.2.3.1.1
+#          name: hrStorageIndex
+  - MIB: SFOS-FIREWALL-MIB
+    table:
+      OID: 1.3.6.1.4.1.2604.5.1.6.1.1.1
+      name: sfosIPSecVpnTunnelTable
+    symbol:
+      OID:  .1.3.6.1.4.1.2604.5.1.6.1.1.1.1.8
+      name:  sfosIPSecVpnActiveTunnel
+
+      # - MIB: HOST-RESOURCES-MIB
+      #symbol:
+      #OID: 1.3.6.1.2.1.25.3.2.1.3.196608
+      #name: hrDeviceDescr
+      #extract: '(*)'
+      #metric_tags:
+      #- tag: cpu_description
+
+  - MIB: XG-FIREWALL-MIB
+    symbol:
+      OID: 1.3.6.1.4.1.21067.2.1.2.2
+      name: cpuStatus
+    metric_tags:
+      - tag: cpu_status
+
+  - MIB: SFOS-FIREWALL-MIB
+    symbol:
+      OID: 1.3.6.1.4.1.2604.5.1.2.4.2
+      name: sfosDiskPercentUsage
+    metric_tags:
+      - tag: disk_usage_percent
+
+  - MIB: SFOS-FIREWALL-MIB
+    symbol:
+      OID: 1.3.6.1.4.1.2604.5.1.2.4.1
+      name: sfosDiskCapacity
+    metric_tags:
+      - tag: disk_capacity
+
+#  - MIB: SFOS-FIREWALL-MIB
+#    symbol:
+#      OID: 1.3.6.1.4.1.2604.5.1.2.2
+#      name: sfosUpTime
+#    metric_tags:
+#      - tag: uptime
+# This error out...Needs a label?
+#  - MIB: SFOS-FIREWALL-MIB
+#    symbol:
+#      OID: 1.3.6.1.4.1.2604.5.1.1.1
+#      name: sfosDeviceName
+#    metric_tags:
+#      - tag:
+
+#  - MIB: DISMAN-EVENT-MIB
+#    symbol:
+#      OID: 1.3.6.1.2.1.1.3.0
+#      name: sysUpTimeInstance
+#      #extract_value: '(.*)' #Looking to extract the string value which woould looke like: 24h 34m 12s or so
+#    metric_tags:
+#      - tag: uptime
+
+  - MIB: SFOS-FIREWALL-MIB
+    symbol:
+      OID: 1.3.6.1.4.1.2604.5.1.2.6
+      name: sfosLiveUsersCount
+    metric_tags:
+      - tag: liveusers
+
+  - MIB: SFOS-FIREWALL-MIB
+    symbol:
+      OID: 1.3.6.1.4.1.2604.5.1.2.5.1
+      name: sfosMemoryCapacity
+    metric_tags:
+      - tag: memory
+
+  - MIB: SFOS-FIREWALL-MIB
+    symbol:
+      OID: 1.3.6.1.4.1.2604.5.1.2.5.2
+      name:  sfosMemoryPercentUsage
+    metric_tags:
+      - tag: memory_used
+
+  - MIB: HOST-RESOURCES-MIB
+    symbol:
+      OID: 1.3.6.1.2.1.25.1.5
+      name:  hrSystemNumUsers
+    metric_tags:
+      - tag: system_users
+
+  - MIB: SFOS-FIREWALL-MIB
+    symbol:
+      OID: 1.3.6.1.4.1.2604.5.1.4.1
+      name: sfosHAStatus
+    metric_tags:
+      - tag: HA_status
+
+#  - MIB: HOST-RESOURCES-MIB
+#    table:
+#      OID: 1.3.6.1.2.1.25.2.3
+#      name: hrStorageTable
+#    symbol:
+#      OID: 1.3.6.1.2.1.25.2.3.1.6
+#      name: hrStorageUsed
+#    metric_tags:
+#  - tag: storage_used
+#        column:
+#          OID: 1.3.6.1.2.1.25.2.3.1.1
+#          name: hrStorageIndex

@@ -1,0 +1,8 @@
+init_config:
+
+instances:
+  -
+    tags:
+      - 'site: <SITE>'
+    min_collection_interval: 15
+    interface: eth0
