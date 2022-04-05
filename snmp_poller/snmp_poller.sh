@@ -3,8 +3,6 @@
 #MANUAL STEPS#
 
 #sudo git clone https://github.com/jackpocket/ops-neteng.git
-export DD_API_KEY=8888
-
 export DD_SITE="datadoghq.com"
 export DD_AGENT_MAJOR_VERSION=7
 
