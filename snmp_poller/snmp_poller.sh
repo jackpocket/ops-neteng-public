@@ -37,6 +37,8 @@ sudo cp ./snmp_poller/profiles/brother.yaml /etc/datadog-agent/conf.d/snmp.d/pro
 sudo cp ./snmp_poller/profiles/zyxel.yaml /etc/datadog-agent/conf.d/snmp.d/profiles/
 sudo cp ./snmp_poller/conf/ping/conf.yaml /etc/datadog-agent/conf.d/ping.d/
 sudo cp ./snmp_poller/conf/speedtest/conf.yaml /etc/datadog-agent/conf.d/speedtest.d/
+sudo cp ./snmp_poller/conf/snmp/conf.yaml /etc/datadog-agent/conf.d/snmp.d/
+
 
 sudo systemctl enable datadog-agent
 sudo systemctl restart datadog-agent
