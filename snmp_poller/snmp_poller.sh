@@ -9,15 +9,13 @@
 #https://github.com/jackpocket/ops-neteng.git
 
 #Remove anything old or remaining
-
+sudo rm ookla*
 sudo apt remove datadog-agent -y
-sudo dpkg --configure -a
 #Run this install script
 #sudo apt-get update
 sudo apt install ssh -y
 sudo apt install curl -y
 sudo apt install snmp -y
-
 
 #Install Datadog Agent
 curl -s https://s3.amazonaws.com/dd-agent/scripts/install_script.sh | bash /dev/stdin
@@ -42,5 +40,5 @@ sudo cp ./snmp_poller/conf/speedtest/conf.yaml /etc/datadog-agent/conf.d/speedte
 
 sudo systemctl enable datadog-agent
 sudo systemctl restart datadog-agent
-
+sudo rm speedtest*
 
