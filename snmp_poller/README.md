@@ -1,6 +1,8 @@
 h4. Manual Steps Prior to running this installer
 
-sudo dpkg --configure -a #???
-sudo apt-get install git -y
 sudo git clone https://github.com/jackpocket/ops-neteng.git
-export your DD ENV variables (make sure you export)
+export DD_AGENT_MAJOR_VERSION=7 
+export DD_API_KEY=888888888888
+export DD_SITE="datadoghq.com" 
+
+sudo git clone https://github.com/jackpocket/ops-neteng.git
