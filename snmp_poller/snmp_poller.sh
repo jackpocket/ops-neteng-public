@@ -14,6 +14,7 @@ sudo apt remove datadog-agent -y
 sudo apt install ssh -y
 sudo apt install curl -y
 sudo apt install snmp -y
+sudo apt isntall iputils-ping
 
 #Install Datadog Agent
 curl -s https://s3.amazonaws.com/dd-agent/scripts/install_script.sh | bash /dev/stdin
