@@ -42,7 +42,48 @@ sudo cp ./snmp_poller/conf/speedtest/conf.yaml /etc/datadog-agent/conf.d/speedte
 sudo cp ./snmp_poller/conf/tcp_check/conf.yaml /etc/datadog-agent/conf.d/tcp_check.d/
 sudo cp ./snmp_poller/conf/snmp/conf.yaml /etc/datadog-agent/conf.d/snmp.d/
 
+#Ask user for variables:
+
+echo Site:
+read site
+echo Community String:
+read community_string_v2
+echo Auth Key:
+read authkey_v3
+echo Priv Key:
+read privkey_v3
+echo Firewall IP:
+read firewall_ip
+echo Printer VLAN:
+read printer_vlan
+echo Network Management VLAN:
+read network_management_vlan
+
+
+
+sed "s/<SITE>/$site/g" /etc/datadog-agent/conf.d/ping.d/conf.yaml
+sed "s/<SITE>/$site/g" /etc/datadog-agent/conf.d/speedtest.d/conf.yaml
+sed "s/<SITE>/$site/g" /etc/datadog-agent/conf.d/tcp_check.d/conf.yaml
+sed "s/<SITE>/$site/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml
+
+sed "s/<FIREWALL_IP>/$firewall_ip/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml
+sed "s/<authKey>/$authkey_v3/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml
+sed "s/<privKey>/$privkey_v3/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml
+sed "s/<PRINTER_VLAN>/$printer_vlan/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml
+sed "s/<COMMUNITY_STRING>/$community_string_v2/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml
+sed "s/<NETWORK_MANAGEMENT_VLAN>/$network_management_vlan/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml
+
+#Replace tags with those variables for certain files
+#Site
+#community_string_v2
+#authkey_v3
+#privkey_v3
+#firewall_ip
+#printer_vlan
+#network_management_vlan
+#Second octet - future
 #Enable and restart the agent
+
 sudo systemctl enable datadog-agent
 sudo systemctl restart datadog-agent
 
