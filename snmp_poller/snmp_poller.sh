@@ -9,6 +9,7 @@
 #Set env
 export DD_SITE="datadoghq.com"
 export DD_AGENT_MAJOR_VERSION=7
+export DD_INSTALL_ONLY=true
 
 #Remove anything old or remaining
 sudo rm ookla*
