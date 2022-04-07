@@ -4,7 +4,6 @@
 #sudo apt install git -y
 #sudo git clone https://github.com/jackpocket/ops-neteng.git
 
-
 #AUTOMATION
 #Set env
 export DD_SITE="datadoghq.com"
@@ -45,20 +44,20 @@ sudo cp ./snmp_poller/conf/snmp/conf.yaml /etc/datadog-agent/conf.d/snmp.d/
 
 #Ask user for variables:
 
-echo Site:
-read site
-echo Community String:
-read community_string_v2
-echo Auth Key:
-read authkey_v3
-echo Priv Key:
-read privkey_v3
-echo Firewall IP:
-read firewall_ip
-echo Printer VLAN:
-read printer_vlan
-echo Network Management VLAN:
-read network_management_vlan
+#echo Site:
+#read site
+#echo Community String:
+#read community_string_v2
+#echo Auth Key:
+#read authkey_v3
+#echo Priv Key:
+#read privkey_v3
+#echo Firewall IP:
+#read firewall_ip
+#echo Printer VLAN:
+#read printer_vlan
+#echo Network Management VLAN:
+#read network_management_vlan
 
 #sed "s/<SITE>/$site/g" /etc/datadog-agent/conf.d/ping.d/conf.yaml
 #sed "s/<SITE>/$site/g" /etc/datadog-agent/conf.d/speedtest.d/conf.yaml
