@@ -14,14 +14,14 @@ read firewall_ip
 #echo Network Management VLAN:
 #read network_management_vlan
 
-sudo sed "s/<SITE>/$site/g" /etc/datadog-agent/conf.d/ping.d/conf.yaml
-sudo sed "s/<SITE>/$site/g" /etc/datadog-agent/conf.d/speedtest.d/conf.yaml
-sudo sed "s/<SITE>/$site/g" /etc/datadog-agent/conf.d/tcp_check.d/conf.yaml
-sudo sed "s/<SITE>/$site/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml
+sudo sed -i "s/<SITE>/$site/g" /etc/datadog-agent/conf.d/ping.d/conf.yaml
+sudo sed -i "s/<SITE>/$site/g" /etc/datadog-agent/conf.d/speedtest.d/conf.yaml
+sudo sed -i "s/<SITE>/$site/g" /etc/datadog-agent/conf.d/tcp_check.d/conf.yaml
+sudo sed -i "s/<SITE>/$site/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml
 #
-sudo sed "s/<FIREWALL_IP>/$firewall_ip/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml
-sudo sed "s/<authKey>/$authkey_v3/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml
-sudo sed "s/<privKey>/$privkey_v3/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml
-sudo sed "s/<COMMUNITY_STRING>/$community_string_v2/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml
+sudo sed -i "s/<FIREWALL_IP>/$firewall_ip/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml
+sudo sed -i "s/<authKey>/$authkey_v3/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml
+sudo sed -i "s/<privKey>/$privkey_v3/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml
+sudo sed -i "s/<COMMUNITY_STRING>/$community_string_v2/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml
 #sed "s/<NETWORK_MANAGEMENT_VLAN>/$network_management_vlan/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml
 #sed "s/<PRINTER_VLAN>/$printer_vlan/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml
