@@ -2,7 +2,7 @@
 
 #MANUAL STEPS#
 #sudo apt install git -y
-#sudo git clone https://github.com/jackpocket/ops-neteng.git
+#sudo git clone https://github.com/jackpocket/ops-neteng-public.git
 
 #AUTOMATION
 #Set env

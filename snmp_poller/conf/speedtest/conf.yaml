@@ -3,6 +3,6 @@ init_config:
 instances:
   -
     tags:
-      - 'site: <SITE>'
+      - 'site:<SITE>'
     min_collection_interval: 15
     interface: eth0
