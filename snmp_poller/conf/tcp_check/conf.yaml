@@ -8,8 +8,8 @@ instances:
     tags:
       - 'site:<SITE>'
   - name: VPN check
-    host: www.google.com
-    port: 80
+    host: prod
+    port: 2222
     collect_response_time: true
     tags:
       - 'site:<SITE>'

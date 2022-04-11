@@ -2,7 +2,7 @@ init_config:
   loader: core
   user_device_id_as_hostname: true
 instances:
-  - ip_address: ]'<FIREWALL_IP>'
+  - ip_address: '<FIREWALL_IP>'
     min_collection_interval: 5
     profile: 'sophos-xg'
     snmp_version: 3
