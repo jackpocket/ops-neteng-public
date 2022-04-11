@@ -3,4 +3,4 @@ init_config:
 instances:
   - host: 8.8.8.8
     tags:
-      - 'site: <SITE>'
+      - 'site:<SITE>'
