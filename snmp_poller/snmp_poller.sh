@@ -67,9 +67,10 @@ sudo sed -i "s/<SITE>/$site/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml
 sudo sed -i "s/<FIREWALL_IP>/$firewall_ip/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml
 sudo sed -i "s/<authKey>/$authkey_v3/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml
 sudo sed -i "s/<privKey>/$privkey_v3/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml
-sudo sed -i "s/<COMMUNITY_STRING>/$community_string_v2/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml
-#sed "s/<NETWORK_MANAGEMENT_VLAN>/$network_management_vlan/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml
-sudo sed -i "s/<PRINTER_VLAN>/$printer_vlan/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml
+sudo sed -i "s/<COMMUNITY_STRING>/$community_string_v2/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml#
+#sudo sed -i "s/<PRINTER_VLAN>/$printer_vlan/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml
+
+sudo sed -i "s/<NETWORK_MANAGEMENT_VLAN>/$network_management_vlan/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml
 
 #Replace tags with those variables for certain files
 #Site
