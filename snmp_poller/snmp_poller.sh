@@ -54,10 +54,10 @@ echo Priv Key:
 read privkey_v3
 echo Firewall IP:
 read firewall_ip
-echo Printer VLAN:
-read printer_vlan
-#echo Network Management VLAN:
-#read network_management_vlan
+#echo Printer VLAN:
+#read printer_vlan
+echo Network Management VLAN:
+read network_management_vlan
 
 sudo sed -i "s/<SITE>/$site/g" /etc/datadog-agent/conf.d/ping.d/conf.yaml
 sudo sed -i "s/<SITE>/$site/g" /etc/datadog-agent/conf.d/speedtest.d/conf.yaml
