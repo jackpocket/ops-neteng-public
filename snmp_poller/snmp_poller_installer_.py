@@ -8,7 +8,7 @@ import subprocess
 dd_api_key = os.getenv('DD_API_KEY')
 dd_agent_major_version = os.getenv('DD_AGENT_MAJOR_VERSION')
 dd_install_only = os.getenv('DD_INSTALL_ONLY')
-dd_site = os.getenv('DD_SITE')
+dd_weburl = os.getenv('DD_WEBURL')
 
 # Get JP environment variables
 site = os.getenv('SITE')
@@ -107,12 +107,15 @@ subprocess.run(f'sudo sed -i s/SITE/{site}/g /etc/datadog-agent/conf.d/tcp_check
 subprocess.run(f'sudo sed -i s/SITE/{site}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml', shell=True)
 
 subprocess.run(f'sudo sed -i s/SITE/{site}/g /etc/datadog-agent/datadog.yaml', shell=True)
+subprocess.run(f'sudo sed -i s/DD_WEBURL/{dd_weburl}/g /etc/datadog-agent/datadog.yaml', shell=True)
+
 subprocess.run(f'sudo sed -i s/DD_API_KEY/{dd_api_key}/g /etc/datadog-agent/datadog.yaml', shell=True)
 
 subprocess.run(f'sudo sed -i s/FIREWALL_IP/{firewall_ip}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml', shell=True)
 subprocess.run(f'sudo sed -i s/AUTH_KEY/{auth_key}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml', shell=True)
 subprocess.run(f'sudo sed -i s/PRIV_KEY/{priv_key}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml', shell=True)
 subprocess.run(f'sudo sed -i s/COMMUNITY_STRING/{comm_string}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml', shell=True)
+#sed does not like the slash at the end of the subnet
 subprocess.run(f'sudo sed -i s/NETWORK_MANAGEMENT_SUBNET/{network_management_subnet}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml', shell=True)
 subprocess.run(f'sudo sed -i s/SNMP_USER/{snmp_user}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml', shell=True)
 
