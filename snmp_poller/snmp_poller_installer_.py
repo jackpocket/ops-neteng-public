@@ -104,6 +104,9 @@ dd_tcp_check_conf = '/etc/datadog-agent/conf.d/tcp_check.d/conf.yaml'
 #subprocess.call(['sudo', 'sed', '-i', 's/<SITE>/', site, '/g', '/etc/datadog-agent/conf.d/ping.d/conf.yaml'])
 subprocess.call(['sudo', 'sed', '-i', 's', '/', '<SITE>', '/', site, '/g', '/etc/datadog-agent/conf.d/ping.d/conf.yaml'])
 
+#subprocess.check_output(f'"sed -i s/<SITE>/{python_var}/g /etc/datadog-agent/conf.d/ping.d/conf.yaml"', shell=False)
+subprocess.check_output(f'"sed -i s/<SITE>/{site}/g /etc/datadog-agent/conf.d/ping.d/conf.yaml"', shell=True)
+
 # subprocess.run("sudo sed -i \"s/<SITE>/${site}/g\" /etc/datadog-agent/conf.d/speedtest.d/conf.yaml", shell=False)
 # subprocess.run("sudo sed -i \"s/<SITE>/${site}/g\" /etc/datadog-agent/conf.d/tcp_check.d/conf.yaml", shell=False)
 # subprocess.run("sudo sed -i \"s/<SITE>/${site}/g\" /etc/datadog-agent/conf.d/snmp.d/conf.yaml", shell=False)
