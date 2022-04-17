@@ -1,5 +1,7 @@
 import os
 import fileinput
+import subprocess
+
 #from github import Github
 
 # Get DD environment variables
@@ -66,36 +68,52 @@ dd_tcp_check_conf = '/etc/datadog-agent/conf.d/tcp_check.d/conf.yaml'
 
 #Replace vars in files
 #with fileinput.FileInput(dd_snmp_conf, inplace=True, backup='.bak') as myfile:
+#
+# with fileinput.FileInput(dd_snmp_conf, inplace=True) as myfile:
+#     for line in myfile:
+#         #print(line.replace('<SITE>', site), end='')
+#         print(line.replace('<SITE>', site))
+#         print(line.replace('<COMM_STRING>', comm_string))
+#         print(line.replace('<AUTH_KEY>', auth_key))
+#         print(line.replace('<PRIV_KEY>', priv_key))
+#         print(line.replace('<FIREWALL_IP>', firewall_ip))
+#         print(line.replace('<NETWORK_MANAGEMENT_SUBNET>', network_management_subnet))
+#         print(line.replace('<SNMP_USER>', snmp_user))
+#
+# with fileinput.FileInput(dd_tcp_check_conf, inplace=True) as myfile:
+#     for line in myfile:
+#         print(line.replace('<SITE>', site))
+#         print(line.replace('<UPLOAD_FTP_PROD>', site))
+#
+# with fileinput.FileInput(dd_agent_conf, inplace=True) as myfile:
+#     for line in myfile:
+#         print(line.replace('<SITE>', site))
+#         print(line.replace('<DD_API_KEY>', site))
+#         print(line.replace('<DD_SITE>', site))
+#
+# with fileinput.FileInput(dd_ping_conf, inplace=True) as myfile:
+#     for line in myfile:
+#         print(line.replace('<SITE>', site))
+#
+# with fileinput.FileInput(dd_speedtest_conf, inplace=True) as myfile:
+#     for line in myfile:
+#         print(line.replace('<SITE>', site))
 
-with fileinput.FileInput(dd_snmp_conf, inplace=True) as myfile:
-    for line in myfile:
-        #print(line.replace('<SITE>', site), end='')
-        print(line.replace('<SITE>', site))
-        print(line.replace('<COMM_STRING>', comm_string))
-        print(line.replace('<AUTH_KEY>', auth_key))
-        print(line.replace('<PRIV_KEY>', priv_key))
-        print(line.replace('<FIREWALL_IP>', firewall_ip))
-        print(line.replace('<NETWORK_MANAGEMENT_SUBNET>', network_management_subnet))
-        print(line.replace('<SNMP_USER>', snmp_user))
 
-with fileinput.FileInput(dd_tcp_check_conf, inplace=True) as myfile:
-    for line in myfile:
-        print(line.replace('<SITE>', site))
-        print(line.replace('<UPLOAD_FTP_PROD>', site))
+subprocess.run("sudo sed -i s/<SITE>/${site}/g /etc/datadog-agent/conf.d/ping.d/conf.yaml", shell=True)
+subprocess.run("sudo sed -i s/<SITE>/${site}/g /etc/datadog-agent/conf.d/speedtest.d/conf.yaml", shell=True)
+subprocess.run("sudo sed -i s/<SITE>/${site}/g /etc/datadog-agent/conf.d/tcp_check.d/conf.yaml", shell=True)
+subprocess.run("sudo sed -i s/<SITE>/${site}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml", shell=True)
+subprocess.run("sudo sed -i s/<SITE>/${site}/g /etc/datadog-agent/datadog.yaml", shell=True)
 
-with fileinput.FileInput(dd_agent_conf, inplace=True) as myfile:
-    for line in myfile:
-        print(line.replace('<SITE>', site))
-        print(line.replace('<DD_API_KEY>', site))
-        print(line.replace('<DD_SITE>', site))
+subprocess.run("sudo sed -i s/<FIREWALL_IP>/${firewall_ip}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml", shell=True)
+subprocess.run("sudo sed -i s/<AUTH_KEY>/${auth_key}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml", shell=True)
+subprocess.run("sudo sed -i s/<PRIV_KEY>/]${priv_key}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml", shell=True)
+subprocess.run("sudo sed -i s/<COMMUNITY_STRING>/${comm_string}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml", shell=True)
+subprocess.run("sudo sed -i s/<NETWORK_MANAGEMENT_SUBNET>/${network_management_subnet}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml", shell=True)
+subprocess.run("sudo sed -i s/<SNMP_USER>/${snmp_user}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml", shell=True)
+subprocess.run("sudo sed -i s/<UPLOAD_FTP_PROD>/${upload_ftp_prod}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml", shell=True)
 
-with fileinput.FileInput(dd_ping_conf, inplace=True) as myfile:
-    for line in myfile:
-        print(line.replace('<SITE>', site))
-
-with fileinput.FileInput(dd_speedtest_conf, inplace=True) as myfile:
-    for line in myfile:
-        print(line.replace('<SITE>', site))
 
 os.system('sudo systemctl enable datadog-agent')
 os.system('sudo systemctl restart datadog-agent')

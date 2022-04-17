@@ -26,7 +26,7 @@ instances:
 #      - 'vendor:brother'
 #      - 'function:printer'
 
-  - network_address: '<NETWORK_MANAGEMENT_VLAN>'
+  - network_address: '<NETWORK_MANAGEMENT_SUBNET>'
     min_collection_interval: 5
     profile: 'zyxel'
     snmp_version: 2
