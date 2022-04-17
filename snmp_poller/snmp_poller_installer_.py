@@ -100,13 +100,13 @@ dd_tcp_check_conf = '/etc/datadog-agent/conf.d/tcp_check.d/conf.yaml'
 #         print(line.replace('<SITE>', site))
 
 
-subprocess.run("sudo sed -i -E s/<SITE>/$SITE/g /etc/datadog-agent/conf.d/ping.d/conf.yaml", shell=False)
-subprocess.run("sudo sed -i -E s/<SITE>/$SITE/g /etc/datadog-agent/conf.d/speedtest.d/conf.yaml", shell=False)
-subprocess.run("sudo sed -i -E s/<SITE>/$SITE/g /etc/datadog-agent/conf.d/tcp_check.d/conf.yaml", shell=False)
-subprocess.run("sudo sed -i -E s/<SITE>/$SITE/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml", shell=False)
-subprocess.run("sudo sed -i -E s/<SITE>/$SITE/g /etc/datadog-agent/datadog.yaml", shell=False)
+subprocess.run("sudo sed -i \"s/<SITE>/$SITE/g\" /etc/datadog-agent/conf.d/ping.d/conf.yaml", shell=False)
+subprocess.run("sudo sed -i \"s/<SITE>/$SITE/g\" /etc/datadog-agent/conf.d/speedtest.d/conf.yaml", shell=False)
+subprocess.run("sudo sed -i \"s/<SITE>/$SITE/g\" /etc/datadog-agent/conf.d/tcp_check.d/conf.yaml", shell=False)
+subprocess.run("sudo sed -i \"s/<SITE>/$SITE/g\" /etc/datadog-agent/conf.d/snmp.d/conf.yaml", shell=False)
+subprocess.run("sudo sed -i \"s/<SITE>/$SITE/g\" /etc/datadog-agent/datadog.yaml", shell=False)
 
-subprocess.run("sudo sed -i s/<FIREWALL_IP>/${firewall_ip}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml", shell=True)
+subprocess.run("sudo sed -i \"s/<FIREWALL_IP>/${firewall_ip}/g\" /etc/datadog-agent/conf.d/snmp.d/conf.yaml", shell=True)
 subprocess.run("sudo sed -i s/<AUTH_KEY>/${auth_key}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml", shell=True)
 subprocess.run("sudo sed -i s/<PRIV_KEY>/]${priv_key}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml", shell=True)
 subprocess.run("sudo sed -i s/<COMMUNITY_STRING>/${comm_string}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml", shell=True)
