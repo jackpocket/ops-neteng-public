@@ -8,7 +8,7 @@ import subprocess
 
 p = subprocess.Popen("pwd", stdout=subprocess.PIPE)
 result = p.communicate()[0]
-print result
+print(result)
 
 
 # if "Already up to date." in result:
