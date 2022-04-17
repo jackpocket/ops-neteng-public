@@ -152,7 +152,6 @@ os.system('sudo -u dd-agent speedtest')
 # sed -e "s/\${i}/1/" -e "s/\${word}/dog/" template.txt
 
 # WORK OUT SED
-
 #
 # sudo sed -i "s/<SITE>/$site/g" /etc/datadog-agent/conf.d/ping.d/conf.yaml
 # sudo sed -i "s/<SITE>/$site/g" /etc/datadog-agent/conf.d/speedtest.d/conf.yaml
