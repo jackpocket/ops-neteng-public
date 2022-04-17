@@ -1,4 +1,4 @@
-api_key: <DD_API_KEY>
-site: <DD_SITE>
+api_key: DD_API_KEY
+site: DD_SITE
 tags:
-  - 'site:<SITE>'
+  - 'site:SITE'
