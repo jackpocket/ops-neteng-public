@@ -6,7 +6,7 @@ instances:
     min_collection_interval: 5
     profile: 'sophos-xg'
     snmp_version: 3
-    user: 'sophos'
+    user: '<SNMP_USER>'
     authProtocol: 'SHA256'
     authKey: '<authKey>'
     privProtocol: 'AES'

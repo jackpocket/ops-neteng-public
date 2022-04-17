@@ -71,6 +71,11 @@ sudo sed -i "s/<COMMUNITY_STRING>/$community_string_v2/g" /etc/datadog-agent/con
 #sudo sed -i "s/<PRINTER_VLAN>/$printer_vlan/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml
 sudo sed -i "s/<NETWORK_MANAGEMENT_VLAN>/$network_management_vlan/g" /etc/datadog-agent/conf.d/snmp.d/conf.yaml
 
+#disable ipv6
+sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
+sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1
+sudo sysctl -w net.ipv6.conf.lo.disable_ipv6=1
+
 #Replace tags with those variables for certain files
 #Site
 #community_string_v2
@@ -92,3 +97,29 @@ sudo rm ookla*
 #Press YES to accept agreement and run the test at least once
 #This must run in order for the check to succeed
 sudo -u dd-agent speedtest
+
+
+#set secrets as env variables
+#I would set environment variables locally first and manually and pull them from somewhere (cloud vault/GCP/etc)
+#Add a script that will check for any updates to git branch repo currently checked out
+# - specify the repo and the folder
+#check for SHA if it changed or string output and perform and re-run the poller script again
+#use python import git
+#use environment variables on the agent machines and leave them there locally.
+#How can they survive a reboot? - Linux ENV vars
+
+#Write the python script
+
+#import git
+#repo = git.Repo('Path/to/repo')
+#repo.remotes.origin.pull()
+
+#Check if something changed:
+#
+#current = repo.head.commit
+#repo.remotes.origin.pull()
+#if current != repo.head.commit:
+#    print("It changed")
+##
+
+#If changes are located, run the installer

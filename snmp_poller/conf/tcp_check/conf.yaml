@@ -7,8 +7,8 @@ instances:
     collect_response_time: true
     tags:
       - 'site:<SITE>'
-  - name: VPN check
-    host: prod
+  - name: Upload check
+    host: <UPLOAD_FTP_PROD>
     port: 2222
     collect_response_time: true
     tags:
