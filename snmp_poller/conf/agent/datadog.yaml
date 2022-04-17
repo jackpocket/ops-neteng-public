@@ -1,4 +1,4 @@
 api_key: DD_API_KEY
-site: DD_SITE
+site: DD_WEBURL
 tags:
   - 'site:SITE'
