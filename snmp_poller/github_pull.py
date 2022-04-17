@@ -6,9 +6,9 @@ import subprocess
 os.chdir("/home/datadog/ops-neteng-public")
 result = subprocess.check_output(["sudo", "git", "pull"])
 
-print(result)
+coolresult = (str(result))
 
-if "Already up to date." in result:
+if "Already up to date." in coolresult:
     print("No updates")
 else:
     print("Need need to execute the installer")
