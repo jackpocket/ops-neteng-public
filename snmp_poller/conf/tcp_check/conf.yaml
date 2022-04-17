@@ -8,7 +8,7 @@ instances:
     tags:
       - 'site:SITE'
   - name: Upload check
-    host: <UPLOAD_FTP_PROD>
+    host: UPLOAD_FTP_PROD
     port: 2222
     collect_response_time: true
     tags:
