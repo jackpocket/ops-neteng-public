@@ -1,6 +1,6 @@
 import os
 import fileinput
-from github import Github
+#from github import Github
 
 # Get DD environment variables
 dd_api_key = os.getenv('DD_API_KEY')
