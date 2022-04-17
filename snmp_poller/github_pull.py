@@ -12,6 +12,7 @@ if "Already up to date." in coolresult:
     print("No updates")
 else:
     print("Need need to execute the installer")
+    print("Cool update test")
 
 
 #test
