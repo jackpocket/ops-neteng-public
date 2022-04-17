@@ -8,9 +8,9 @@ instances:
     snmp_version: 3
     user: 'SNMP_USER'
     authProtocol: 'SHA256'
-    authKey: 'authKey'
+    authKey: 'AUTH_KEY'
     privProtocol: 'AES'
-    privKey: 'privKey'
+    privKey: 'PRIV_KEY'
     tags:
       - 'site:SITE'
       - 'vendor:sophos'
