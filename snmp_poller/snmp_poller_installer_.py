@@ -34,6 +34,8 @@ try:
     os.system('sudo apt install -y iputils-ping')
     os.system('sudo apt install -y curl')
     os.system('sudo apt install -y snmp')
+    os.system('sudo apt install -y net-tools')
+
 except:
     exit("Failed to install the packages")
 
@@ -121,13 +123,16 @@ subprocess.run(f'sudo sed -i s/SNMP_USER/{snmp_user}/g /etc/datadog-agent/conf.d
 
 subprocess.run(f'sudo sed -i s/UPLOAD_FTP_PROD/{upload_ftp_prod}/g /etc/datadog-agent/conf.d/tcp_check.d/conf.yaml', shell=True)
 
-# subprocess.run("sudo sed -i s/<AUTH_KEY>/${auth_key}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml", shell=True)
-# subprocess.run("sudo sed -i s/<PRIV_KEY>/]${priv_key}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml", shell=True)
-# subprocess.run("sudo sed -i s/<COMMUNITY_STRING>/${comm_string}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml", shell=True)
-# subprocess.run("sudo sed -i s/<NETWORK_MANAGEMENT_SUBNET>/${network_management_subnet}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml", shell=True)
-# subprocess.run("sudo sed -i s/<SNMP_USER>/${snmp_user}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml", shell=True)
-# subprocess.run("sudo sed -i s/<UPLOAD_FTP_PROD>/${upload_ftp_prod}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml", shell=True)
-#
+#Deal wth interface name
+#find primary interface. assume there is only one for right now
+#find the subnet/vlan, find gateway
+#gateway can be used for firewall IP
+#subnet can be used for network-management IP
+
+#interface for speedtest is not matching template
+#rename it to eth0
+#find name of it first
+#sudo ifconfig ens160 down && sudo /sbin/ip link set ens160 name eth0 && sudo ifconfig eth0 up
 
 os.system('sudo systemctl enable datadog-agent')
 os.system('sudo systemctl restart datadog-agent')
