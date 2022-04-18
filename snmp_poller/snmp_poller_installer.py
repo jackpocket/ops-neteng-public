@@ -56,14 +56,14 @@ os.system('sudo tar -zxf ookla-speedtest-1.1.1-linux-x86_64.tgz')
 os.system('sudo cp speedtest* /usr/local/bin/')
 
 # Copy templated files
-os.system('sudo cp ./snmp_poller/profiles/sophos-xg.yaml /etc/datadog-agent/conf.d/snmp.d/profiles/')
-os.system('sudo cp ./snmp_poller/profiles/brother.yaml /etc/datadog-agent/conf.d/snmp.d/profiles/')
-os.system('sudo cp ./snmp_poller/profiles/zyxel.yaml /etc/datadog-agent/conf.d/snmp.d/profiles/')
-os.system('sudo cp ./snmp_poller/conf/ping/conf.yaml /etc/datadog-agent/conf.d/ping.d/')
-os.system('sudo cp ./snmp_poller/conf/speedtest/conf.yaml /etc/datadog-agent/conf.d/speedtest.d/')
-os.system('sudo cp ./snmp_poller/conf/tcp_check/conf.yaml /etc/datadog-agent/conf.d/tcp_check.d/')
-os.system('sudo cp ./snmp_poller/conf/snmp/conf.yaml /etc/datadog-agent/conf.d/snmp.d/')
-os.system('sudo cp ./snmp_poller/conf/agent/datadog.yaml /etc/datadog-agent/')
+os.system('sudo cp /home/datadog/ops-neteng-public/snmp_poller/profiles/sophos-xg.yaml /etc/datadog-agent/conf.d/snmp.d/profiles/')
+os.system('sudo cp /home/datadog/ops-neteng-public/snmp_poller/profiles/brother.yaml /etc/datadog-agent/conf.d/snmp.d/profiles/')
+os.system('sudo cp /home/datadog/ops-neteng-public/snmp_poller/profiles/zyxel.yaml /etc/datadog-agent/conf.d/snmp.d/profiles/')
+os.system('sudo cp /home/datadog/ops-neteng-public/snmp_poller/conf/ping/conf.yaml /etc/datadog-agent/conf.d/ping.d/')
+os.system('sudo cp /home/datadog/ops-neteng-public/snmp_poller/conf/speedtest/conf.yaml /etc/datadog-agent/conf.d/speedtest.d/')
+os.system('sudo cp /home/datadog/ops-neteng-public/snmp_poller/conf/tcp_check/conf.yaml /etc/datadog-agent/conf.d/tcp_check.d/')
+os.system('sudo cp /home/datadog/ops-neteng-public/snmp_poller/conf/snmp/conf.yaml /etc/datadog-agent/conf.d/snmp.d/')
+os.system('sudo cp /home/datadog/ops-neteng-public/snmp_poller/conf/agent/datadog.yaml /etc/datadog-agent/')
 
 # Give each file a variable
 dd_agent_conf = '/etc/datadog-agent/datadog.yaml'
