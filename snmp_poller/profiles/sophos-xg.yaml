@@ -62,20 +62,6 @@ metrics:
       #metric_tags:
       #- tag: cpu_description
 
-  - MIB: XG-FIREWALL-MIB
-    symbol:
-      OID: 1.3.6.1.4.1.21067.2.1.2.2
-      name: cpuStatus
-    metric_tags:
-      - tag: cpu_status
-
-  - MIB: XG-FIREWALL-MIB
-    symbol:
-      OID: 1.3.6.1.4.1.21067.2.1.2.10.18
-      name: droutingService
-    metric_tags:
-      - tag: routing_service
-
   - MIB: SFOS-FIREWALL-MIB
     symbol:
       OID: 1.3.6.1.4.1.2604.5.1.2.4.2
