@@ -4,7 +4,7 @@ import subprocess
 
 
 os.system('sudo apt remove -y datadog-agent')
-subprocess.run(['/bin/sh', '/home/datadog/.bashrc'])
+subprocess.check_output("/home/datadog/.bashrc", shell=True)
 # Get DD environment variables
 dd_api_key = os.getenv('DD_API_KEY')
 dd_agent_major_version = os.getenv('DD_AGENT_MAJOR_VERSION')
