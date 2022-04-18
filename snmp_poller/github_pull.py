@@ -8,8 +8,10 @@ result = subprocess.check_output(["sudo", "git", "pull"])
 
 coolresult = (str(result))
 
+print(coolresult)
+
 if "Already up to date." in coolresult:
-    pass
+    print("No update")
 else:
-    #print("Need need to execute the installer")
-    os.system('python3 /home/datadog/ops-neteng-public/snmp_poller/snmp_poller_installer.py')
+    print("Need to execute the installer")
+    #os.system('python3 /home/datadog/ops-neteng-public/snmp_poller/snmp_poller_installer.py')
