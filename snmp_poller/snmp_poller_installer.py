@@ -62,7 +62,6 @@ os.system('sudo cp /home/datadog/ops-neteng-public/snmp_poller/conf/tcp_check/co
 os.system('sudo cp /home/datadog/ops-neteng-public/snmp_poller/conf/snmp/conf.yaml /etc/datadog-agent/conf.d/snmp.d/')
 os.system('sudo cp /home/datadog/ops-neteng-public/snmp_poller/conf/agent/datadog.yaml /etc/datadog-agent/')
 
-
 os.system('sudo cp /home/datadog/ops-neteng-public/snmp_poller/github_pull.py /opt/')
 
 # Give each file a variable
