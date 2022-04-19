@@ -13,4 +13,4 @@ if "Already up to date." in coolresult:
     pass
 else:
     #print("Need to execute the installer")
-    os.system('python3 /home/datadog/ops-neteng-public/snmp_poller/snmp_poller_installer.py')
+    os.system('/usr/bin/python3 /home/datadog/ops-neteng-public/snmp_poller/snmp_poller_installer.py')

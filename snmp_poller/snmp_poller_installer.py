@@ -2,7 +2,6 @@ import os
 import fileinput
 import subprocess
 
-
 #os.system('sudo apt remove -y datadog-agent')
 os.system('sudo systemctl stop datadog-agent')
 
@@ -62,6 +61,9 @@ os.system('sudo cp /home/datadog/ops-neteng-public/snmp_poller/conf/speedtest/co
 os.system('sudo cp /home/datadog/ops-neteng-public/snmp_poller/conf/tcp_check/conf.yaml /etc/datadog-agent/conf.d/tcp_check.d/')
 os.system('sudo cp /home/datadog/ops-neteng-public/snmp_poller/conf/snmp/conf.yaml /etc/datadog-agent/conf.d/snmp.d/')
 os.system('sudo cp /home/datadog/ops-neteng-public/snmp_poller/conf/agent/datadog.yaml /etc/datadog-agent/')
+
+
+os.system('sudo cp /home/datadog/ops-neteng-public/snmp_poller/github_pull.py /opt/')
 
 # Give each file a variable
 dd_agent_conf = '/etc/datadog-agent/datadog.yaml'
