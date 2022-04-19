@@ -3,10 +3,8 @@ import fileinput
 import subprocess
 
 
-os.system('sudo apt remove -y datadog-agent')
-
-sourcevars = "source /home/datadog/.bashrc"
-subprocess.Popen(sourcevars, shell=True)
+#os.system('sudo apt remove -y datadog-agent')
+os.system('sudo systemctl stop datadog-agent')
 
 # Get DD environment variables
 dd_api_key = os.getenv('DD_API_KEY')
