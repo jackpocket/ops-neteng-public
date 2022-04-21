@@ -4,7 +4,7 @@ import subprocess
 
 #os.system('sudo apt remove -y datadog-agent')
 os.system('sudo systemctl stop datadog-agent')
-os.system('sudo source /etc/environment')
+os.system('source /etc/environment')
 
 # Get DD environment variables
 dd_api_key = os.getenv('DD_API_KEY')
