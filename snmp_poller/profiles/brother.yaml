@@ -7,9 +7,9 @@ extends:
     - _generic-ip.yaml
     - _generic-tcp.yaml
     - _generic-udp.yaml
-    - _generic-router-if.yaml
+      #- _generic-router-if.yaml
       #- _generic-router-ip.yaml
-    - _generic-host-resources.yaml
+      #- _generic-host-resources.yaml
 
 metrics:
   - MIB: BROTHER-MIB
