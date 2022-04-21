@@ -16,15 +16,15 @@ instances:
       - 'vendor:sophos'
       - 'function:firewall'
 
-  - network_address: 'PRINTER_VLAN'
-    min_collection_interval: 5
-    profile: 'brother'
-    snmp_version: 2
-    community_string: 'COMMUNITY_STRING'
-    tags:
-      - 'site:SITE'
-      - 'vendor:brother'
-      - 'function:printer'
+#  - network_address: 'PRINTER_VLAN'
+#    min_collection_interval: 5
+#    profile: 'brother'
+#    snmp_version: 2
+#    community_string: 'COMMUNITY_STRING'
+#    tags:
+#      - 'site:SITE'
+#      - 'vendor:brother'
+#      - 'function:printer'
 
 #  - network_address: 'NETWORK_MANAGEMENT_SUBNET'
 #    min_collection_interval: 5
