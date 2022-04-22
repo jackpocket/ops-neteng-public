@@ -1,9 +1,19 @@
 Manual Steps Prior to running this installer
 
-sudo git clone https://github.com/jackpocket/ops-neteng-public.git
+REQUIRED - Place all required environment variables into /etc/environment:
 
-export DD_API_KEY=888888888888
+sudo git clone https://github.com/jackpocket/ops-neteng-public.git
 
 cd ops-neteng-public
 
-sh snmp_poller/snmp_poller.sh
+python3 snmp_poller/snmp_poller
+
+add cronjob
+add line to /etc/sudoers
+
+CHECKS:
+sudo -u dd-agent datadog-agent check snmp
+sudo -u dd-agent datadog-agent check agent
+sudo -u dd-agent datadog-agent check speedtest
+sudo -u dd-agent datadog-agent check ping
+sudo -u dd-agent datadog-agent check tcp_check
