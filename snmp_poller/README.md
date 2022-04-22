@@ -1,7 +1,7 @@
-h4. Step1. Build a Hyper-V ubuntu server VM
-h4. Step2. Login to VM, set environment variables and check out repo
-h4. Step3. Run the installer
-h4. Step4. A few manual steps to make sure we have "automation"
+### Step1. Build a Hyper-V ubuntu server VM
+### Step2. Login to VM, set environment variables and check out repo
+### Step3. Run the installer
+### Step4. A few manual steps to make sure we have "automation"
 
 REQUIRED - Place all required environment variables into /etc/environment:
 
