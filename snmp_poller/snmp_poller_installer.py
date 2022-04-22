@@ -127,9 +127,7 @@ subprocess.run(f'sudo sed -i s/COMMUNITY_STRING/{comm_string}/g /etc/datadog-age
 #network_management_subnet.replace("/", "\/", 1)
 subprocess.run(f'sudo sed -i s/NETWORK_MANAGEMENT_SUBNET/{network_management_subnet}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml', shell=True)
 subprocess.run(f'sudo sed -i s/PRINTER_VLAN/{printer_vlan}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml', shell=True)
-
 subprocess.run(f'sudo sed -i s/SNMP_USER/{snmp_user}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml', shell=True)
-
 subprocess.run(f'sudo sed -i s/UPLOAD_FTP_PROD/{upload_ftp_prod}/g /etc/datadog-agent/conf.d/tcp_check.d/conf.yaml', shell=True)
 
 #Deal wth interface name
