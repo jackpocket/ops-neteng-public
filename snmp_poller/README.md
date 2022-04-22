@@ -1,4 +1,7 @@
-Manual Steps Prior to running this installer
+Step1. Build a Hyper-V ubuntu server VM
+Step2. Login to VM, set environment variables and check out repo
+Step3. Run the installer
+Step4. A few manual steps to make sure we have "automation"
 
 REQUIRED - Place all required environment variables into /etc/environment:
 
