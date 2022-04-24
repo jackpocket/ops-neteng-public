@@ -26,7 +26,7 @@ network_management_subnet = os.getenv('NETWORK_MANAGEMENT_SUBNET')
 printer_vlan = os.getenv('PRINTER_VLAN')
 upload_ftp_prod = os.getenv('UPLOAD_FTP_PROD')
 if os.getenv('UPS_IP') is None:
-    ups_ip = firewall_ip
+    ups_ip = '127.0.0.1'
 else:
     ups_ip = os.getenv('UPS_IP')
 
