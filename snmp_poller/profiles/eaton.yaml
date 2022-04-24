@@ -76,10 +76,9 @@ metrics:
 #    metric_tags:
 #      - tag: ups_output_current
 #
-#  - MIB: UPS-MIB
-#    symbol:
-#      OID:  1.3.6.1.2.1.33.1.4.4.1.4
-#      name: upsOutputPower
-#    metric_tags:
-#      - tag: ups_output_power
-#
+  - MIB: UPS-MIB
+    symbol:
+      OID:  1.3.6.1.2.1.33.1.4.4.1.4
+      name: upsOutputPower
+    metric_tags:
+      - tag: ups_output_power
