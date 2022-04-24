@@ -35,6 +35,13 @@ metrics:
 
   - MIB: UPS-MIB
     symbol:
+      OID: 1.3.6.1.2.1.33.1.7.3
+      name: upsTestResultsSummary
+    metric_tags:
+      - tag: ups_test_results
+
+  - MIB: UPS-MIB
+    symbol:
       OID: 1.3.6.1.2.1.33.1.4.4.1.5
       name: upsOutputPercentLoad
     metric_tags:
