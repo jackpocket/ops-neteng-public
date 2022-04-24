@@ -25,8 +25,10 @@ firewall_ip = os.getenv('FIREWALL_IP')  # LOCATE DEFAULT GW
 network_management_subnet = os.getenv('NETWORK_MANAGEMENT_SUBNET')
 printer_vlan = os.getenv('PRINTER_VLAN')
 upload_ftp_prod = os.getenv('UPLOAD_FTP_PROD')
-if os.getenv('UPS_IP') is 'None':
+if os.getenv('UPS_IP') is None:
     ups_ip = firewall_ip
+else:
+    ups_ip = os.getenv('UPS_IP')
 
 # Update - slow
 # os.system('sudo apt update')
