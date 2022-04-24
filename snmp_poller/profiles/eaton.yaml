@@ -54,13 +54,19 @@ metrics:
     metric_tags:
       - tag: ups_alarms
 
-#TODO This is the most important one and it does not work. Open an issue with DD
-#  - MIB: UPS-MIB
-#    symbol:
-#      OID: 1.3.6.1.2.1.33.1.3.3.1.3
-#      name: upsInputVoltage
-#    metric_tags:
-#      - tag: ups_input_voltage
+  - MIB: UPS-MIB
+    symbol:
+      OID: 1.3.6.1.2.1.33.1.3.3.1.3
+      name: upsInputVoltage.1
+    metric_tags:
+      - tag: ups_input_voltage
+
+  - MIB: UPS-MIB
+    symbol:
+      OID: 1.3.6.1.2.1.33.1.2.1
+      name: upsBatteryStatus
+    metric_tags:
+      - tag: ups_battery_status
 
 #  - MIB: UPS-MIB
 #    symbol:
