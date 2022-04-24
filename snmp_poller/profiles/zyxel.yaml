@@ -11,10 +11,10 @@ extends:
     - _generic-router-ip.yaml
     - _generic-host-resources.yaml
 
-metrics:
-  - MIB: IF-MIB
-    symbol:
-      OID:  1.3.6.1.2.1.2.2.1.10
-      name: ifInOctets
-    metric_tags:
-      - tag: octets_in
+#metrics:
+#  - MIB: IF-MIB
+#    symbol:
+#      OID:  1.3.6.1.2.1.2.2.1.10
+#      name: ifInOctets
+#    metric_tags:
+#      - tag: octets_in
