@@ -168,6 +168,17 @@ metrics:
     metric_tags:
       - tag: HA_status
 
+#The number of times TCP connections have made a direct transition to the CLOSED state
+#from either the SYN-SENT state or the SYN-RCVD state, plus the number of times TCP connections
+#have made a direct transition to the LISTEN state from the SYN-RCVD state.
+
+  - MIB: RFC1213-MIB
+    symbol:
+      OID: 1.3.6.1.2.1.6.7
+      name: tcpAttemptFails
+    metric_tags:
+      - tag: attempt_fails
+
 #  - MIB: SFOS-FIREWALL-MIB
 #    symbol:
 #      OID: 1.3.6.1.4.1.2604.5.1.2.7
