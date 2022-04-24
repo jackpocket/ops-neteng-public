@@ -18,3 +18,31 @@ metrics:
       name: upsEstimatedMinutesRemaining
     metric_tags:
       - tag: ups_mins_remaining
+
+  - MIB: UPS-MIB
+    symbol:
+      OID: 1.3.6.1.2.1.33.1.2.4
+      name: upsEstimatedChargeRemaining
+    metric_tags:
+      - tag: ups_charge_remaining
+
+  - MIB: UPS-MIB
+    symbol:
+      OID: 1.3.6.1.2.1.33.1.2.5
+      name: upsBatteryVoltage
+    metric_tags:
+      - tag: ups_voltage
+
+  - MIB: UPS-MIB
+    symbol:
+      OID: 1.3.6.1.2.1.33.1.2.6
+      name:  upsBatteryCurrent
+    metric_tags:
+      - tag: ups_current
+
+  - MIB: UPS-MIB
+    symbol:
+      OID: 1.3.6.1.2.1.33.1.2.7
+      name:  upsBatteryTemperature
+    metric_tags:
+      - tag: ups_temperature
