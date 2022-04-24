@@ -63,6 +63,13 @@ metrics:
 
   - MIB: UPS-MIB
     symbol:
+      OID: 1.3.6.1.2.1.33.1.4.4.1.3
+      name: upsOutputCurrent.1
+    metric_tags:
+      - tag: ups_output_current
+
+  - MIB: UPS-MIB
+    symbol:
       OID: 1.3.6.1.2.1.33.1.2.1
       name: upsBatteryStatus
     metric_tags:
