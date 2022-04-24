@@ -14,6 +14,13 @@ extends:
 metrics:
   - MIB: UPS-MIB
     symbol:
+      OID: 1.3.6.1.2.1.33.1.4.4.1.5
+      name: upsOutputPercentLoad
+    metric_tags:
+      - tag: ups_output_percent_load
+
+  - MIB: UPS-MIB
+    symbol:
       OID: 1.3.6.1.2.1.33.1.2.3
       name: upsEstimatedMinutesRemaining
     metric_tags:
@@ -46,14 +53,8 @@ metrics:
       name: upsAlarmsPresent
     metric_tags:
       - tag: ups_alarms
-#TODO This is the most important one and it does not work. Open an issue with DD
-  - MIB: UPS-MIB
-    symbol:
-      OID: 1.3.6.1.2.1.33.1.4.4.1.5
-      name: upsOutputPercentLoad
-    metric_tags:
-      - tag: ups_output_percent
 
+#TODO This is the most important one and it does not work. Open an issue with DD
 #  - MIB: UPS-MIB
 #    symbol:
 #      OID: 1.3.6.1.2.1.33.1.3.3.1.3
