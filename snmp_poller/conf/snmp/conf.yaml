@@ -35,3 +35,13 @@ instances:
       - 'site:SITE'
       - 'vendor:zyxel'
       - 'function:switch'
+
+  - ip_address: 'UPS_IP'
+    min_collection_interval: 5
+    profile: 'eaton'
+    snmp_version: 2
+    community_string: 'COMMUNITY_STRING'
+    tags:
+      - 'site:SITE'
+      - 'vendor:eaton'
+      - 'function:ups'
