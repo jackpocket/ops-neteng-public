@@ -42,10 +42,17 @@ metrics:
 
   - MIB: UPS-MIB
     symbol:
-      OID: 1.3.6.1.2.1.33.1.4.4.1.5
-      name: upsOutputPercentLoad
+      OID: 1.3.6.1.2.1.33.1.6.1
+      name: upsAlarmsPresent
     metric_tags:
-      - tag: ups_output_percent
+      - tag: ups_alarms
+#TODO This is the most important one and it does not work. Open an issue with DD
+#  - MIB: UPS-MIB
+#    symbol:
+#      OID: 1.3.6.1.2.1.33.1.4.4.1.5
+#      name: upsOutputPercentLoad
+#    metric_tags:
+#      - tag: ups_output_percent
 
 #  - MIB: UPS-MIB
 #    symbol:
