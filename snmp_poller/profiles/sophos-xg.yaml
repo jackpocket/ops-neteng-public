@@ -206,3 +206,31 @@ metrics:
       name: sfosIPSecVpnActiveTunnel
     metric_tags:
       - tag: ipsec_vpn_active_tunnels
+
+
+#TABLE - works given that the index is 1
+  - MIB: SFOS-FIREWALL-MIB
+    table:
+      OID: 1.3.6.1.4.1.2604.5.1.6.1.1.1
+      name: sfosIPSecVpnTunnelTable
+    symbols:
+      # List of symbols ('columns') to retrieve.
+      # Same format as for a single OID.
+      # Each row in the table will emit these metrics.
+      - OID: 1.3.6.1.4.1.2604.5.1.6.1.1.1.1.2
+        name: sfosIPSecVpnConnName
+      - OID: 1.3.6.1.4.1.2604.5.1.6.1.1.1.1.3
+        name: sfosIPSecVpnConnDes
+      - OID: 1.3.6.1.4.1.2604.5.1.6.1.1.1.1.4
+        name: sfosIPSecVpnPolicyName
+      - OID: 1.3.6.1.4.1.2604.5.1.6.1.1.1.1.5
+        name: sfosIPSecVpnConnMode
+      - OID: 1.3.6.1.4.1.2604.5.1.6.1.1.1.1.6
+        name: sfosIPSecVpnConnType
+      - OID: 1.3.6.1.4.1.2604.5.1.6.1.1.1.1.7
+        name: sfosIPSecVpnLocalgwPort
+      - OID: 1.3.6.1.4.1.2604.5.1.6.1.1.1.1.8
+        name: sfosIPSecVpnActiveTunnel
+    metric_tags:
+      - tag: vpn_tunnel
+      - index: 1
