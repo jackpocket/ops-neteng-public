@@ -11,6 +11,7 @@ extends:
     - _generic-router-ip.yaml
     - _generic-host-resources.yaml
 
+#TABLE - works given that the index is 1
 metrics:
   - MIB: UPS-MIB
     table:
