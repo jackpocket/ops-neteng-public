@@ -14,8 +14,8 @@ extends:
 metrics:
   - MIB: UPS-MIB
     table:
-      OID: 1.3.6.1.2.1.33.1.4.4.1
-      name: upsOutputEntry
+      OID: 1.3.6.1.2.1.33.1.4.4
+      name: upsOutputTable
     symbols:
       # List of symbols ('columns') to retrieve.
       # Same format as for a single OID.
