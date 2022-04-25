@@ -225,7 +225,7 @@ metrics:
         name: sfosIPSecVpnActiveTunnel
     metric_tags:
       - tag: vpn_tunnel
-      - index: 6
+      - index: 1
 
   - MIB: SFOS-FIREWALL-MIB
     symbol:
