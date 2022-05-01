@@ -1,4 +1,5 @@
 init_config:
+    service: tcp_check
 
 instances:
   - name: www check
