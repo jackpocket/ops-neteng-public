@@ -4,5 +4,5 @@ instances:
   -
     tags:
       - 'site:SITE'
-    min_collection_interval: 600
+    min_collection_interval: 300
     interface: eth0
