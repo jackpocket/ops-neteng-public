@@ -1,4 +1,5 @@
 init_config:
+    service: ping
 
 instances:
   - host: 8.8.8.8
