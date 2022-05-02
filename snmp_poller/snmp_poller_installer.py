@@ -25,10 +25,7 @@ firewall_ip = os.getenv('FIREWALL_IP')  # LOCATE DEFAULT GW
 network_management_subnet = os.getenv('NETWORK_MANAGEMENT_SUBNET')
 printer_vlan = os.getenv('PRINTER_VLAN')
 upload_ftp_prod = os.getenv('UPLOAD_FTP_PROD')
-if os.getenv('UPS_IP') is None:
-    ups_ip = '127.0.0.1'
-else:
-    ups_ip = os.getenv('UPS_IP')
+
 
 # Update - slow
 # os.system('sudo apt update')
@@ -133,7 +130,14 @@ subprocess.run(f'sudo sed -i s/PRIV_KEY/{priv_key}/g /etc/datadog-agent/conf.d/s
 subprocess.run(f'sudo sed -i s/COMMUNITY_STRING/{comm_string}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml', shell=True)
 #sed does not like the slash at the end of the subnet
 #network_management_subnet.replace("/", "\/", 1)
-subprocess.run(f'sudo sed -i s#UPS_IP#{ups_ip}#g /etc/datadog-agent/conf.d/snmp.d/conf.yaml', shell=True)
+
+if os.getenv('UPS_IP') is None:
+    #ups_ip = '127.0.0.1'
+    pass
+else:
+    ups_ip = os.getenv('UPS_IP')
+    subprocess.run(f'sudo sed -i s#UPS_IP#{ups_ip}#g /etc/datadog-agent/conf.d/snmp.d/conf.yaml', shell=True)
+
 subprocess.run(f'sudo sed -i s#NETWORK_MANAGEMENT_SUBNET#{network_management_subnet}#g /etc/datadog-agent/conf.d/snmp.d/conf.yaml', shell=True)
 subprocess.run(f'sudo sed -i s#PRINTER_VLAN#{printer_vlan}#g /etc/datadog-agent/conf.d/snmp.d/conf.yaml', shell=True)
 subprocess.run(f'sudo sed -i s/SNMP_USER/{snmp_user}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml', shell=True)
