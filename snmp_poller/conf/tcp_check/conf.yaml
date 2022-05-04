@@ -20,3 +20,9 @@ instances:
 #    collect_response_time: true
 #    tags:
 #      - 'site:SITE'
+  - name: ip_chicken_check
+    host: www.ipchicken.com
+    port: 443
+    collect_response_time: true
+    tags:
+      - 'site:SITE'
