@@ -3,3 +3,4 @@ site: DD_WEBURL
 logs_enabled: true
 tags:
   - 'site:SITE'
+  - 'function:on-prem-agent'
