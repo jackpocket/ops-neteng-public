@@ -122,6 +122,8 @@ subprocess.run(f'sudo sed -i s/SITE/{site}/g /etc/datadog-agent/conf.d/tcp_check
 subprocess.run(f'sudo sed -i s/SITE/{site}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml', shell=True)
 
 subprocess.run(f'sudo sed -i s/SITE/{site}/g /etc/datadog-agent/datadog.yaml', shell=True)
+subprocess.run(f'sudo sed -i s/SITE/{site}/g /etc/syslog-ng/conf.d/sophos.conf', shell=True)
+
 subprocess.run(f'sudo sed -i s/DD_WEBURL/{dd_weburl}/g /etc/datadog-agent/datadog.yaml', shell=True)
 
 subprocess.run(f'sudo sed -i s/DD_API_KEY/{dd_api_key}/g /etc/datadog-agent/datadog.yaml', shell=True)
