@@ -42,6 +42,7 @@ try:
     os.system('sudo apt install -y curl')
     os.system('sudo apt install -y snmp')
     os.system('sudo apt install -y net-tools')
+    os.system('sudo apt install -y syslog-ng')
 
 except:
     exit("Failed to install the packages")
@@ -68,6 +69,7 @@ os.system('sudo cp /home/datadog/ops-neteng-public/snmp_poller/conf/speedtest/co
 os.system('sudo cp /home/datadog/ops-neteng-public/snmp_poller/conf/tcp_check/conf.yaml /etc/datadog-agent/conf.d/tcp_check.d/')
 os.system('sudo cp /home/datadog/ops-neteng-public/snmp_poller/conf/snmp/conf.yaml /etc/datadog-agent/conf.d/snmp.d/')
 os.system('sudo cp /home/datadog/ops-neteng-public/snmp_poller/conf/agent/datadog.yaml /etc/datadog-agent/')
+os.system('sudo cp /home/datadog/ops-neteng-public/snmp_poller/conf/syslog-ng/sophos.conf /etc/syslog-ng/conf.d/')
 
 os.system('sudo cp /home/datadog/ops-neteng-public/snmp_poller/github_pull.py /opt/')
 os.system('sudo chmod +x /opt/github_pull.py')
@@ -123,6 +125,7 @@ subprocess.run(f'sudo sed -i s/SITE/{site}/g /etc/datadog-agent/datadog.yaml', s
 subprocess.run(f'sudo sed -i s/DD_WEBURL/{dd_weburl}/g /etc/datadog-agent/datadog.yaml', shell=True)
 
 subprocess.run(f'sudo sed -i s/DD_API_KEY/{dd_api_key}/g /etc/datadog-agent/datadog.yaml', shell=True)
+subprocess.run(f'sudo sed -i s/DD_API_KEY/{dd_api_key}/g /etc/syslog-ng/conf.d/sophos.conf', shell=True)
 
 subprocess.run(f'sudo sed -i s/FIREWALL_IP/{firewall_ip}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml', shell=True)
 subprocess.run(f'sudo sed -i s/AUTH_KEY/{auth_key}/g /etc/datadog-agent/conf.d/snmp.d/conf.yaml', shell=True)
@@ -156,6 +159,8 @@ subprocess.run(f'sudo sed -i s/UPLOAD_FTP_PROD/{upload_ftp_prod}/g /etc/datadog-
 
 os.system('sudo systemctl enable datadog-agent')
 os.system('sudo systemctl restart datadog-agent')
+os.system('sudo systemctl restart syslog-ng')
+
 # #Cleanup
 os.system('sudo rm speedtest*')
 os.system('sudo rm ookla*')
