@@ -162,7 +162,9 @@ subprocess.run(f'sudo sed -i s/UPLOAD_FTP_PROD/{upload_ftp_prod}/g /etc/datadog-
 os.system('sudo systemctl enable datadog-agent')
 os.system('sudo systemctl restart datadog-agent')
 os.system('sudo systemctl restart syslog-ng')
-os.system('sudo apt remove lacework -y')
+os.system('sudo apt-get remove --purge lacework -y')
+
+os.system('sudo rm -rf /home/datadog/lacework')
 
 # #Cleanup
 os.system('sudo rm speedtest*')
