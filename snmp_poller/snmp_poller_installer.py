@@ -172,8 +172,5 @@ os.system('sudo rm ookla*')
 # #Press YES to accept agreement and run the test at least once
 # #This must run in order for the check to succeed
 os.system('sudo -u dd-agent speedtest')
-#Update force Jul 7 2022
-os.system('sudo apt update -y')
-os.system('sudo apt upgrade -y')
 
 
