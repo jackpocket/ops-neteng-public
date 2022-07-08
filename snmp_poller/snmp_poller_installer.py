@@ -173,3 +173,7 @@ os.system('sudo rm ookla*')
 # #This must run in order for the check to succeed
 os.system('sudo -u dd-agent speedtest')
 #Update force Jul 7 2022
+os.system('sudo apt update -y')
+os.system('sudo apt upgrade -y')
+
+
