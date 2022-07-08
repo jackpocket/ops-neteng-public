@@ -162,9 +162,9 @@ subprocess.run(f'sudo sed -i s/UPLOAD_FTP_PROD/{upload_ftp_prod}/g /etc/datadog-
 os.system('sudo systemctl enable datadog-agent')
 os.system('sudo systemctl restart datadog-agent')
 os.system('sudo systemctl restart syslog-ng')
-os.system('sudo apt-get remove --purge lacework -y')
-
-os.system('sudo rm -rf /home/datadog/lacework')
+# os.system('sudo apt-get remove --purge lacework -y')
+#
+# os.system('sudo rm -rf /home/datadog/lacework')
 
 # #Cleanup
 os.system('sudo rm speedtest*')
@@ -172,4 +172,4 @@ os.system('sudo rm ookla*')
 # #Press YES to accept agreement and run the test at least once
 # #This must run in order for the check to succeed
 os.system('sudo -u dd-agent speedtest')
-#Update force
+#Update force Jul 7 2022
